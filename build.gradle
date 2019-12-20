@@ -1,0 +1,45 @@
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0'
+    }
+}
+plugins {
+    id 'java'
+}
+
+group 'Ali.com'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.junit.platform.gradle.plugin'
+
+dependencies {
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile group: 'org.javassist', name: 'javassist', version: '3.25.0-GA'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.16'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+    compile group: 'org.jeasy', name: 'easy-random-core', version: '4.0.0'
+    compile 'javax.xml.bind:jaxb-api:2.3.1'
+    compile'javax.activation:activation:1.1'
+    compile'org.glassfish.jaxb:jaxb-runtime:2.3.0'
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.0.0")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.0")
+    testCompile 'junit:junit'
+}
